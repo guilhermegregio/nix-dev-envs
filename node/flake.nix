@@ -2,7 +2,7 @@
   description = "A Nix-flake-based Node.js development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -16,7 +16,7 @@
     let
       overlays = [
         (self: super: rec {
-          nodejs = super.nodejs-18_x;
+          nodejs = super.nodejs_18;
           pnpm = super.nodePackages.pnpm;
           yarn = (super.yarn.override { inherit nodejs; });
         })
@@ -29,6 +29,7 @@
 
         shellHook = ''
           echo "node `${pkgs.nodejs}/bin/node --version`"
+          export PATH="$PWD/node_modules/.bin/:$PATH"
         '';
       };
     });
