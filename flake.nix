@@ -95,6 +95,11 @@
           description = "Node.js development environment";
         };
 
+        flyio = {
+          path = ./flyio;
+          description = "Fly.io development environment";
+        };
+
         opa = {
           path = ./opa;
           description = "Open Policy Agent development environment";
