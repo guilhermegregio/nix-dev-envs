@@ -100,6 +100,11 @@
           description = "Fly.io development environment";
         };
 
+        bun = {
+          path = ./bun;
+          description = "Bun development environment";
+        };
+
         opa = {
           path = ./opa;
           description = "Open Policy Agent development environment";
