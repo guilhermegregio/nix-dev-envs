@@ -40,6 +40,11 @@
           description = "Elm development environment";
         };
 
+        flutter = {
+          path = ./flutter;
+          description = "Flutter development environment";
+        };
+
         gleam = {
           path = ./gleam;
           description = "Gleam development environment";
