@@ -2,9 +2,7 @@
   "nodes": {
     "android-nixpkgs": {
       "inputs": {
-        "devshell": [
-          "devshell"
-        ],
+        "devshell": "devshell",
         "flake-utils": "flake-utils",
         "nixpkgs": [
           "nixpkgs"
@@ -28,9 +26,10 @@
     "devshell": {
       "inputs": {
         "nixpkgs": [
+          "android-nixpkgs",
           "nixpkgs"
         ],
-        "systems": "systems_2"
+        "systems": "systems"
       },
       "locked": {
         "lastModified": 1698410321,
@@ -46,29 +45,9 @@
         "type": "github"
       }
     },
-    "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1698882062,
-        "narHash": "sha256-HkhafUayIqxXyHH1X8d9RDl1M2CkFgZLjKD3MzabiEo=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "8c9fa2545007b49a5db5f650ae91f227672c3877",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
-        "systems": "systems"
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1694529238,
@@ -97,9 +76,8 @@
         "type": "github"
       },
       "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
+        "id": "flake-utils",
+        "type": "indirect"
       }
     },
     "nixpkgs": {
@@ -121,8 +99,6 @@
     "root": {
       "inputs": {
         "android-nixpkgs": "android-nixpkgs",
-        "devshell": "devshell",
-        "flake-parts": "flake-parts",
         "flake-utils": "flake-utils_2",
         "nixpkgs": "nixpkgs"
       }
