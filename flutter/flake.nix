@@ -3,22 +3,41 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    android-nixpkgs.url = "github:tadfisher/android-nixpkgs/stable";
-    android-nixpkgs.inputs.nixpkgs.follows = "nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
     { self
     , nixpkgs
     , flake-utils
-    , android-nixpkgs
-    }: {
-    packages.x86_64-darwin.android-sdk = android-nixpkgs.sdk (sdkPkgs: with sdkPkgs; [
-      cmdline-tools-latest
-      build-tools-34-0-0
-      platform-tools
-      platforms-android-34
-      emulator
-    ]);
-  };
+    }:
+
+  flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          android_sdk.accept_license = true;
+          allowUnfree = true;
+        };
+      };
+      buildToolsVersion = "34.0.0";
+      androidComposition = pkgs.androidenv.composeAndroidPackages {
+        buildToolsVersions = [ buildToolsVersion "28.0.3" ];
+        platformVersions = [ "34" "28" ];
+        abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
+      };
+      androidSdk = androidComposition.androidsdk;
+    in
+    {
+      devShell =
+        with pkgs; mkShell rec {
+          ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
+          buildInputs = [
+            flutter
+            androidSdk
+            jdk17
+          ];
+        };
+    });
 }
