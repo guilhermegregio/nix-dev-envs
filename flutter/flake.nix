@@ -13,45 +13,13 @@
     android-nixpkgs.inputs.devshell.follows = "devshell";
   };
 
-outputs = inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ inputs.devshell.flakeModule ];
-      systems = [ "x86_64-linux" ];
-      perSystem = { config, self', inputs', pkgs, system, ... }: rec {
-        packages.android-sdk = inputs.android-nixpkgs.sdk.${system} (sdkPkgs:
-          with sdkPkgs; [
-            cmdline-tools-latest
-            build-tools-34-0-0
-            platform-tools
-            platforms-android-34
-            patcher-v4
-            emulator
-          ]);
-        devshells.default = {
-          env = [
-            {
-              name = "PATH";
-              prefix = "$HOME/.pub-cache/bin";
-            }
-            {
-              name = "ANDROID_HOME";
-              value = "${packages.android-sdk}/share/android-sdk";
-            }
-            {
-              name = "ANDROID_SDK_ROOT";
-              value = "${packages.android-sdk}/share/android-sdk";
-            }
-            {
-              name = "JAVA_HOME";
-              value = pkgs.jdk.home;
-            }
-            {
-              name = "CHROME_EXECUTABLE";
-              value = "${pkgs.ungoogled-chromium}/bin/chromium";
-            }
-          ];
-          packages = [ pkgs.flutter pkgs.jdk pkgs.gradle packages.android-sdk ];
-        };
-      };
-    };
+  outputs = { self, android-nixpkgs }: {
+    packages.x86_64-darwin.android-sdk = android-nixpkgs.sdk (sdkPkgs: with sdkPkgs; [
+      cmdline-tools-latest
+      build-tools-34-0-0
+      platform-tools
+      platforms-android-34
+      emulator
+    ]);
+  };
 }
