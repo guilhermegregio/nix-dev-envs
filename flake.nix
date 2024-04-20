@@ -45,6 +45,11 @@
           description = "Flutter development environment";
         };
 
+        android = {
+          path = ./android;
+          description = "Android development environment";
+        };
+
         gleam = {
           path = ./gleam;
           description = "Gleam development environment";
