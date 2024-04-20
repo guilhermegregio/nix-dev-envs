@@ -33,6 +33,7 @@
             # Useful packages for building and testing.
             build-tools-34-0-0
             build-tools-30-0-2
+            build-tools-33-0-2
             cmdline-tools-latest
             emulator
             platform-tools
