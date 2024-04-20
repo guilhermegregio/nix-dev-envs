@@ -21,10 +21,10 @@
           allowUnfree = true;
         };
       };
-      buildToolsVersion = "30.0.2";
+      buildToolsVersion = "33.0.0";
       androidComposition = pkgs.androidenv.composeAndroidPackages {
         buildToolsVersions = [ buildToolsVersion "30.0.2" ];
-        platformVersions = [ "34" "33" "28" ];
+        platformVersions = [ "33" ];
         abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
       };
       androidSdk = androidComposition.androidsdk;
@@ -34,6 +34,7 @@
         with pkgs; mkShell rec {
           ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
           buildInputs = [
+            flutter
             androidSdk
             jdk17
           ];
