@@ -21,12 +21,12 @@ devshell.mkShell {
     }
     {
       name = "JAVA_HOME";
-      value = jdk.home;
+      value = jdk8.home;
     }
   ];
   packages = [
     android-sdk
     gradle
-    jdk
+    jdk8
   ];
 }
