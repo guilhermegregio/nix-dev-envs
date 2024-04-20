@@ -21,7 +21,7 @@
           allowUnfree = true;
         };
       };
-      buildToolsVersion = "33.0.0";
+      buildToolsVersion = "30.0.2";
       androidComposition = pkgs.androidenv.composeAndroidPackages {
         buildToolsVersions = [ buildToolsVersion "30.0.2" ];
         platformVersions = [ "33" ];
