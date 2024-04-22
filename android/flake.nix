@@ -41,7 +41,7 @@
             platforms-android-33
 
             # Other useful packages for a development environment.
-            # ndk-26-1-10909125
+            ndk-21-4-7075529
             # skiaparser-3
             # sources-android-34
           ]
