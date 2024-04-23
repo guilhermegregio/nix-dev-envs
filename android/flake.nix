@@ -39,6 +39,7 @@
             platform-tools
             platforms-android-34
             platforms-android-33
+            platforms-android-28
 
             # Other useful packages for a development environment.
             ndk-21-4-7075529
