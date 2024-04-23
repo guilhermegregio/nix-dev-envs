@@ -42,6 +42,7 @@
 
             # Other useful packages for a development environment.
             ndk-21-4-7075529
+            cmake-3-10-2-4988404
             # skiaparser-3
             # sources-android-34
           ]
