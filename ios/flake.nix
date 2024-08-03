@@ -24,10 +24,21 @@
       ];
 
       pkgs = import nixpkgs { inherit overlays system; };
+
+      commonPackages = with pkgs; [
+        gcc
+        gradle
+        kdoctor
+        kotlin
+        ncurses
+        patchelf
+        python3
+        zlib
+      ];
     in
     {
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ kotlin gradle gcc ncurses patchelf zlib ];
+        packages = commonPackages;
 
         shellHook = ''
           echo "Ambiente de desenvolvimento pronto!"
@@ -38,7 +49,7 @@
           ${pkgs.python3}/bin/python3 --version
 
           echo "Verificando a configuração com o KDoctor..."
-          kdoctor
+          ${pkgs.kdoctor}/bin/kdoctor
 
           # Instrução para Xcode
           echo "Certifique-se de que o Xcode e as ferramentas de linha de comando estejam instalados e configurados corretamente."
