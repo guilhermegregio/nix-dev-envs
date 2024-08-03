@@ -34,14 +34,14 @@
           echo "Kotlin version:"
           ${pkgs.kotlin}/bin/kotlin -version
 
-          # echo "Python version:"
-          # ${pkgs.python3}/bin/python3 --version
+          echo "Python version:"
+          ${pkgs.python3}/bin/python3 --version
 
-          # echo "Verificando a configuração com o KDoctor..."
-          # kdoctor
+          echo "Verificando a configuração com o KDoctor..."
+          kdoctor
 
-          # # Instrução para Xcode
-          # echo "Certifique-se de que o Xcode e as ferramentas de linha de comando estejam instalados e configurados corretamente."
+          # Instrução para Xcode
+          echo "Certifique-se de que o Xcode e as ferramentas de linha de comando estejam instalados e configurados corretamente."
         '';
       };
     });
