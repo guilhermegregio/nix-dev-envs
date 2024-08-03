@@ -70,6 +70,11 @@
           description = "Haskell development environment";
         };
 
+        ios = {
+          path = ./ios;
+          description = "iOS development environment";
+        };
+
         java = {
           path = ./java;
           description = "Java development environment";
