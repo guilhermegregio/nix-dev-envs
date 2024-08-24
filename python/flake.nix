@@ -36,7 +36,7 @@
           # Setup the virtual environment if it doesn't already exist.
           VENV=.venv
           if test ! -d $VENV; then
-            python -m venv $VENV
+            pythortualenv $VENV
           fi
 
           source ./$VENV/bin/activate
