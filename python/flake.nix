@@ -33,13 +33,12 @@
         shellHook = ''
           ${pkgs.python}/bin/python --version
 
-          # Setup the virtual environment if it doesn't already exist.
+          # Activate virtual environmnet if exists
           VENV=.venv
-          if test ! -d $VENV; then
-            pythortualenv $VENV
+          if test -d $VENV; then
+            source ./$VENV/bin/activate
           fi
 
-          source ./$VENV/bin/activate
         '';
       };
     });
