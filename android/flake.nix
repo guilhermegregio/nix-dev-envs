@@ -21,7 +21,6 @@
           };
           overlays = [
             devshell.overlays.default
-            self.overlay
           ];
         };
 
