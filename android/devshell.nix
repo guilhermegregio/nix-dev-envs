@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, androidComposition, androidRootSdk }:
 
 with pkgs;
 
@@ -13,20 +13,35 @@ devshell.mkShell {
   env = [
     {
       name = "ANDROID_HOME";
-      value = "${android-sdk}/share/android-sdk";
+      value = androidRootSdk;
     }
     {
       name = "ANDROID_SDK_ROOT";
-      value = "${android-sdk}/share/android-sdk";
+      value = androidRootSdk;
+    }
+    {
+      name = "ANDROID_NDK_ROOT";
+      value = "${androidRootSdk}/ndk-bundle";
+    }
+    {
+      name = "GRADLE_OPTS";
+      value = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidRootSdk}/build-tools/34.0.0/aapt2";
     }
     {
       name = "JAVA_HOME";
-      value = jdk17.home;
+      value = zulu17.home;
     }
   ];
   packages = [
-    android-sdk
-    gradle
-    jdk17
+    ruby_3_1
+    zulu17 
+    (callPackage gradle-packages.gradle_8 {
+      java = zulu17;
+    })
+    git 
+    androidComposition.androidsdk
+    nodejs_18 
+    nodePackages.yarn
+    watchman
   ];
 }

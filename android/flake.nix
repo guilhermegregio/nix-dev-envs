@@ -48,42 +48,11 @@
         androidRootSdk = "${androidComposition.androidsdk}/libexec/android-sdk";
       in
       {
-        devShell = import ./devshell.nix { inherit pkgs; };
-
-        devShells.default = pkgs.devshell.mkShell {
-          name = "hydra-react-native";
-          packages = with pkgs; [
-            ruby_3_1
-            zulu17 
-            gradle 
-            git 
-            androidComposition.androidsdk
-            nodejs_18 
-            nodePackages.yarn
-            watchman
-          ];
-          env = with pkgs; [
-            {
-              name = "ANDROID_HOME";
-              value = androidRootSdk;
-            }
-            {
-              name = "ANDROID_SDK_ROOT";
-              value = androidRootSdk;
-            }
-            {
-              name = "ANDROID_NDK_ROOT";
-              value = "${androidRootSdk}/ndk-bundle";
-            }
-            {
-              name = "GRADLE_OPTS";
-              value = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidRootSdk}/build-tools/34.0.0/aapt2";
-            }
-            {
-              name = "JAVA_HOME";
-              value = zulu17.home;
-            }
-          ];
+        devShell = import ./devshell.nix { 
+          inherit pkgs; 
+          inherit androidComposition;
+          inherit androidRootSdk;
         };
-    });
+      }
+    );
 }
