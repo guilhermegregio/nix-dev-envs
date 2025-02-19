@@ -2,68 +2,89 @@
   description = "A Nix-flake-based Android development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
-    devshell.url = "github:numtide/devshell";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
-    android.url = "github:tadfisher/android-nixpkgs/stable";
   };
 
-  outputs = { self, nixpkgs, devshell, flake-utils, android }:
-    {
-      overlay = final: prev: {
-        inherit (self.packages.${final.system}) android-sdk android-studio;
-      };
-    }
-    //
-    flake-utils.lib.eachSystem [ "aarch64-darwin" "x86_64-darwin" "x86_64-linux" ] (system:
+  outputs = { self, flake-utils, devshell, nixpkgs }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
-        inherit (nixpkgs) lib;
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            android_sdk.accept_license = true;
+          };
           overlays = [
             devshell.overlays.default
             self.overlay
           ];
         };
+
+        androidComposition = pkgs.androidenv.composeAndroidPackages {
+          toolsVersion = null;
+          platformToolsVersion = "34.0.4";
+          buildToolsVersions = [ "34.0.0" "30.0.3" ];
+          includeEmulator = true;
+          includeSystemImages = true;
+          abiVersions = [ "x86_64" ];
+          emulatorVersion = "33.1.6";
+          platformVersions = [ "34" "33" ];
+          systemImageTypes = [ "google_apis_playstore" ];
+          cmakeVersions = [ "3.22.1" ];
+          includeNDK = true;
+          ndkVersions = ["23.1.7779620"];
+          useGoogleAPIs = true;
+          includeExtras = [
+            "extras;google;gcm"
+          ];
+          extraLicenses = [
+            "android-sdk-license"
+          ];
+        };
+        androidRootSdk = "${androidComposition.androidsdk}/libexec/android-sdk";
       in
       {
-        packages = {
-          android-sdk = android.sdk.${system} (sdkPkgs: with sdkPkgs; [
-            # Useful packages for building and testing.
-            build-tools-34-0-0
-            build-tools-30-0-2
-            build-tools-33-0-2
-            cmdline-tools-latest
-            emulator
-            platform-tools
-            platforms-android-34
-            platforms-android-33
-            platforms-android-28
-
-            # Other useful packages for a development environment.
-            ndk-21-4-7075529
-            cmake-3-10-2-4988404
-            # skiaparser-3
-            # sources-android-34
-          ]
-          ++ lib.optionals (system == "aarch64-darwin") [
-            # system-images-android-34-google-apis-arm64-v8a
-            # system-images-android-34-google-apis-playstore-arm64-v8a
-          ]
-          ++ lib.optionals (system == "x86_64-darwin" || system == "x86_64-linux") [
-            # system-images-android-34-google-apis-x86-64
-            # system-images-android-34-google-apis-playstore-x86-64
-          ]);
-        } // lib.optionalAttrs (system == "x86_64-linux") {
-          # Android Studio in nixpkgs is currently packaged for x86_64-linux only.
-          android-studio = pkgs.androidStudioPackages.stable;
-          # android-studio = pkgs.androidStudioPackages.beta;
-          # android-studio = pkgs.androidStudioPackages.preview;
-          # android-studio = pkgs.androidStudioPackage.canary;
-        };
-
         devShell = import ./devshell.nix { inherit pkgs; };
-      }
-    );
+
+        devShells.default = pkgs.devshell.mkShell {
+          name = "hydra-react-native";
+          packages = with pkgs; [
+            ruby_3_1
+            zulu17 
+            gradle 
+            git 
+            androidComposition.androidsdk
+            nodejs_18 
+            nodePackages.yarn
+            watchman
+          ];
+          env = with pkgs; [
+            {
+              name = "ANDROID_HOME";
+              value = androidRootSdk;
+            }
+            {
+              name = "ANDROID_SDK_ROOT";
+              value = androidRootSdk;
+            }
+            {
+              name = "ANDROID_NDK_ROOT";
+              value = "${androidRootSdk}/ndk-bundle";
+            }
+            {
+              name = "GRADLE_OPTS";
+              value = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidRootSdk}/build-tools/34.0.0/aapt2";
+            }
+            {
+              name = "JAVA_HOME";
+              value = zulu17.home;
+            }
+          ];
+        };
+    });
 }
