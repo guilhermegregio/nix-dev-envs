@@ -110,6 +110,11 @@
           description = "Node.js development environment";
         };
 
+        node18 = {
+          path = ./node18;
+          description = "Node.js development environment 18.x.x";
+        };
+
         flyio = {
           path = ./flyio;
           description = "Fly.io development environment";
