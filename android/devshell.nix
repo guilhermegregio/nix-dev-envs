@@ -29,18 +29,21 @@ devshell.mkShell {
     }
     {
       name = "JAVA_HOME";
-      value = zulu17.home;
+      value = openjdk17-bootstrap.home;
     }
   ];
   packages = [
     ruby_3_1
-    zulu17 
+    python312Full
+    xcodegen
+    # zulu17
+    openjdk17-bootstrap
     (callPackage gradle-packages.gradle_8 {
-      java = zulu17;
+      java = openjdk17-bootstrap;
     })
-    git 
+    # git
     androidComposition.androidsdk
-    nodejs_18 
+    nodejs_18
     nodePackages.yarn
     watchman
   ];
