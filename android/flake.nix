@@ -36,7 +36,7 @@
           systemImageTypes = [ "google_apis_playstore" ];
           cmakeVersions = [ "3.22.1" ];
           includeNDK = true;
-          ndkVersions = ["23.1.7779620"];
+          ndkVersions = ["23.1.7779620" "25.1.8937393"];
           useGoogleAPIs = true;
           includeExtras = [
             "extras;google;gcm"
@@ -48,8 +48,8 @@
         androidRootSdk = "${androidComposition.androidsdk}/libexec/android-sdk";
       in
       {
-        devShell = import ./devshell.nix { 
-          inherit pkgs; 
+        devShell = import ./devshell.nix {
+          inherit pkgs;
           inherit androidComposition;
           inherit androidRootSdk;
         };
