@@ -2,23 +2,20 @@
   description = "A Nix-flake-based Python development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
     flake-utils.url = "github:numtide/flake-utils";
-    mach-nix.url = "github:/DavHau/mach-nix";
   };
 
   outputs =
     { self
     , nixpkgs
     , flake-utils
-    , mach-nix
     }:
 
     flake-utils.lib.eachDefaultSystem (system:
     let
       overlays = [
         (self: super: {
-          machNix = mach-nix.defaultPackage.${system};
           python = super.python311;
         })
       ];
@@ -27,7 +24,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ python machNix  ] ++
+        packages = with pkgs; [ python poetry  ] ++
           (with pkgs.python311Packages; [ pip virtualenv ipython ]);
 
         shellHook = ''
