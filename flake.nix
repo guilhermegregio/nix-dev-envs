@@ -150,6 +150,11 @@
           description = "Python development environment";
         };
 
+        python312 = {
+          path = ./python312;
+          description = "Python 3.12 development environment";
+        };
+
         ruby = {
           path = ./ruby;
           description = "Ruby development environment";
@@ -162,7 +167,8 @@
 
         rust-toolchain = {
           path = ./rust-toolchain;
-          description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
+          description =
+            "Rust development environment with Rust version defined by a rust-toolchain.toml file";
         };
 
         scala = {
@@ -213,17 +219,14 @@
             (
               cd $dir
               ${exec "nix"} flake update # Update flake.lock
-              ${exec "direnv"} reload    # Make sure things work after the update
+              ${
+                exec "direnv"
+              } reload    # Make sure things work after the update
             )
           done
         '';
-      in
-      {
-        devShells = {
-          default = mkShell {
-            packages = [ format update ];
-          };
-        };
+      in {
+        devShells = { default = mkShell { packages = [ format update ]; }; };
 
         packages = rec {
           default = dvt;
