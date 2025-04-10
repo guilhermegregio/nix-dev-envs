@@ -17,7 +17,7 @@
       in {
         devShells.default = pkgs.mkShell {
           packages = with pkgs;
-            [ python uv ] ++ (with pkgs.python312Packages; [ ipython ]);
+            [ python uv ] ++ (with pkgs.python312Packages; [ numpy ipython ]);
 
           shellHook = ''
             ${pkgs.python}/bin/python --version
