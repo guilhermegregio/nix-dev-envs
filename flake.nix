@@ -110,6 +110,11 @@
           description = "Node.js development environment";
         };
 
+        node14 = {
+          path = ./node14;
+          description = "Node.js development environment 14.x.x";
+        };
+
         node18 = {
           path = ./node18;
           description = "Node.js development environment 18.x.x";
