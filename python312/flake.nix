@@ -17,7 +17,16 @@
       in {
         devShells.default = pkgs.mkShell {
           packages = with pkgs;
-            [ python uv ] ++ (with pkgs.python312Packages; [ numpy ipython ]);
+            [ python uv autoPatchelfHook ]
+            ++ (with pkgs.python312Packages; [ numpy ipython ]);
+
+          buildInputs = with pkgs; [ stdenv.cc.cc.lib zlib openssl ];
+
+          LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+            pkgs.stdenv.cc.cc
+            pkgs.zlib
+            pkgs.openssl
+          ];
 
           shellHook = ''
             ${pkgs.python}/bin/python --version
@@ -28,6 +37,12 @@
             #   source ./$VENV/bin/activate
             # fi
 
+            # Auto-patchear node se existir
+            NODE_PATH=".venv/lib/python3.12/site-packages/nodejs_wheel/bin/node"
+            if [ -f "$NODE_PATH" ]; then
+              echo "Patching node binary..."
+              autoPatchelf "$NODE_PATH" 2>/dev/null || true
+            fi
           '';
         };
       });
