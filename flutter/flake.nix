@@ -26,6 +26,9 @@
         buildToolsVersions = [ buildToolsVersion "28.0.3" ];
         platformVersions = [ "34" "28" ];
         abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
+        includeNDK = true;
+        ndkVersions = [ "28.2.13676358" ];
+        cmakeVersions = [ "3.22.1" ];
       };
       androidSdk = androidComposition.androidsdk;
     in
