@@ -21,10 +21,10 @@
           allowUnfree = true;
         };
       };
-      buildToolsVersion = "34.0.0";
+      buildToolsVersion = "35.0.0";
       androidComposition = pkgs.androidenv.composeAndroidPackages {
-        buildToolsVersions = [ buildToolsVersion "28.0.3" ];
-        platformVersions = [ "34" "28" ];
+        buildToolsVersions = [ buildToolsVersion "34.0.0" "28.0.3" ];
+        platformVersions = [ "36" "34" "28" ];
         abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
         includeNDK = true;
         ndkVersions = [ "28.2.13676358" ];
