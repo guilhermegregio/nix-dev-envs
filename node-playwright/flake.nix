@@ -17,8 +17,7 @@
           "${pkgs.playwright-driver}/browsers.json")).browsers;
         chromium-rev = (builtins.head
           (builtins.filter (x: x.name == "chromium") browsers)).revision;
-      in
-      {
+      in {
         devShells.default = pkgs.mkShell {
           packages = [
             nodejs
@@ -34,7 +33,7 @@
             export PLAYWRIGHT_BROWSERS_PATH=${pkgs.playwright-driver.browsers}
             export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
             export PLAYWRIGHT_NODEJS_PATH=${nodejs}/bin/node
-            export PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH=${pkgs.playwright-driver.browsers}/chromium-${chromium-rev}/chrome-linux64/chrome
+            export PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH=${pkgs.playwright-driver.browsers}/chromium-${chromium-rev}/chrome-linux/chrome
           '';
         };
       });
