@@ -2,3 +2,4 @@
 .venv/
 target
 result
+.claude/settings.local.json

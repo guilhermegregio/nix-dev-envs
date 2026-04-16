@@ -36,7 +36,7 @@
           systemImageTypes = [ "google_apis_playstore" ];
           cmakeVersions = [ "3.22.1" ];
           includeNDK = true;
-          ndkVersions = ["23.1.7779620" "25.1.8937393"];
+          ndkVersions = [ "23.1.7779620" "25.1.8937393" ];
           useGoogleAPIs = true;
           includeExtras = [
             "extras;google;gcm"

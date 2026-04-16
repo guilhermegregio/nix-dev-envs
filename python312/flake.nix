@@ -14,7 +14,8 @@
         overlays = [ (self: super: { python = super.python312Full; }) ];
 
         pkgs = import nixpkgs { inherit overlays system; };
-      in {
+      in
+      {
         devShells.default = pkgs.mkShell {
           packages = with pkgs;
             [ python uv autoPatchelfHook ]

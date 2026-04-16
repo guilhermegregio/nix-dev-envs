@@ -120,6 +120,11 @@
           description = "Node.js development environment 18.x.x";
         };
 
+        node-playwright = {
+          path = ./node-playwright;
+          description = "Node.js + Playwright development environment";
+        };
+
         flyio = {
           path = ./flyio;
           description = "Fly.io development environment";

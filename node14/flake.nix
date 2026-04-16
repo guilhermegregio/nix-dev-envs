@@ -15,12 +15,14 @@
     flake-utils.lib.eachDefaultSystem (system:
     let
       # Nixpkgs com Node.js 14
-      node14Pkgs = import (builtins.fetchGit {
-        name = "nixpkgs-node14";
-        url = "https://github.com/nixos/nixpkgs-channels/";
-        ref = "refs/heads/nixpkgs-unstable";
-        rev = "f76bef61369be38a10c7a1aa718782a60340d9ff";
-      }) { inherit system; };
+      node14Pkgs = import
+        (builtins.fetchGit {
+          name = "nixpkgs-node14";
+          url = "https://github.com/nixos/nixpkgs-channels/";
+          ref = "refs/heads/nixpkgs-unstable";
+          rev = "f76bef61369be38a10c7a1aa718782a60340d9ff";
+        })
+        { inherit system; };
 
       overlays = [
         (self: super: rec {
