@@ -90,6 +90,11 @@
           description = "LaTeX development environment";
         };
 
+        lsp-dev = {
+          path = ./lsp-dev;
+          description = "LSP servers and formatters (Zed-friendly)";
+        };
+
         nickel = {
           path = ./nickel;
           description = "Nickel development environment";

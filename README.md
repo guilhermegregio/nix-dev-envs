@@ -43,6 +43,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Java]                   | [`java`](./java/)             |
 | [Kotlin]                 | [`kotlin`](./kotlin/)         |
 | [LaTeX]                  | [`latex`](./latex/)         |
+| LSP servers              | [`lsp-dev`](./lsp-dev/)       |
 | [Nickel]                 | [`nickel`](./nickel/)         |
 | [Nim]                    | [`nim`](./nim/)               |
 | [Nix]                    | [`nix`](./nix/)               |
@@ -150,6 +151,37 @@ The sections below list what each template includes. In all cases, you're free t
 - [texlive]
 - [tectonic]
 - [texlab]
+
+### [`lsp-dev`](./lsp-dev/)
+
+LSP servers and formatters useful with [Zed]. Designed to be composed with
+language-specific templates via multiple `use flake` directives in `.envrc`,
+e.g.:
+
+```sh
+use flake "github:guilhermegregio/nix-dev-envs?dir=node"
+use flake "github:guilhermegregio/nix-dev-envs?dir=lsp-dev"
+```
+
+Web / JS / TS:
+
+- [vtsls]
+- [biome]
+- [tailwindcss-language-server]
+- [vscode-langservers-extracted] (json, html, css, eslint)
+
+Nix:
+
+- [nixd]
+- [nil]
+- [nixfmt]
+
+YAML / Markdown / Shell:
+
+- [yaml-language-server]
+- [marksman]
+- [bash-language-server]
+- [shellcheck]
 
 ### [`nickel`](./nickel/)
 
@@ -353,5 +385,15 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
+[zed]: https://zed.dev
 [zig]: https://ziglang.org
+[vtsls]: https://github.com/yioneko/vtsls
+[biome]: https://biomejs.dev
+[tailwindcss-language-server]: https://github.com/tailwindlabs/tailwindcss-intellisense
+[vscode-langservers-extracted]: https://github.com/hrsh7th/vscode-langservers-extracted
+[nixd]: https://github.com/nix-community/nixd
+[nil]: https://github.com/oxalica/nil
+[yaml-language-server]: https://github.com/redhat-developer/yaml-language-server
+[marksman]: https://github.com/artempyanykh/marksman
+[bash-language-server]: https://github.com/bash-lsp/bash-language-server
 
