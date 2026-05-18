@@ -120,6 +120,11 @@
           description = "Node.js development environment 18.x.x";
         };
 
+        node22 = {
+          path = ./node22;
+          description = "Node.js development environment 22.x.x";
+        };
+
         flyio = {
           path = ./flyio;
           description = "Fly.io development environment";
