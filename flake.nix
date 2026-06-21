@@ -60,6 +60,11 @@
           description = "Go (Golang) development environment";
         };
 
+        graphify = {
+          path = ./graphify;
+          description = "graphify - codebase-to-knowledge-graph CLI";
+        };
+
         hashi = {
           path = ./hashi;
           description = "HashiCorp DevOps tools development environment";
