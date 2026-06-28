@@ -1,0 +1,39 @@
+# .graphifyignore — base canônica (kb project init-hygiene)
+# Grafo = SÓ CÓDIGO. Doc/arquitetura/PRD/specs vivem no vault, não no índice.
+# Veja graph-audit.md (Onda 3 T01): grafo embute só símbolos/relações, não valores.
+
+# --- Documentação e specs (moram no vault) ---
+docs/
+specs/
+*.md
+CLAUDE.md
+behavior.feature
+
+# --- Dependências e artefatos de build ---
+node_modules/
+dist/
+build/
+out/
+coverage/
+*.min.js
+*.map
+
+# --- Lockfiles (ruído, não estrutura) ---
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+*.lock
+
+# --- Segredos e ambiente (nunca indexar) ---
+.env
+.env.*
+
+# --- Dados privados e o próprio grafo ---
+archive/
+graphify-out/
+.git/
+
+# .graphifyignore — snippet stack: nix (anexado à base)
+result
+result-*
+.direnv/

@@ -1,0 +1,3 @@
+# graphify (kb project init-hygiene)
+graphify-out/graph.json merge=graphify-union -diff linguist-generated=true
+graphify-out/manifest.json merge=graphify-union -diff linguist-generated=true
