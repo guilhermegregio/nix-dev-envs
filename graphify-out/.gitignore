@@ -1,0 +1,6 @@
+# graphify-out/.gitignore — allowlist invertida.
+# Versiona SÓ o grafo enxuto + manifest; ignora cache/html/relatórios derivados.
+*
+!.gitignore
+!graph.json
+!manifest.json

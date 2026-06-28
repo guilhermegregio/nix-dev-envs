@@ -1,0 +1,681 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 1,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Nix flake templates for easy dev environments",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_nix_flake_templates_for_easy_dev_environments",
+      "community": 1,
+      "norm_label": "nix flake templates for easy dev environments"
+    },
+    {
+      "label": "How to use the templates",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "readme_how_to_use_the_templates",
+      "community": 1,
+      "norm_label": "how to use the templates"
+    },
+    {
+      "label": "Available templates",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "readme_available_templates",
+      "community": 1,
+      "norm_label": "available templates"
+    },
+    {
+      "label": "Template contents",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "readme_template_contents",
+      "community": 0,
+      "norm_label": "template contents"
+    },
+    {
+      "label": "[`clojure`](./clojure/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "readme_clojure_clojure",
+      "community": 0,
+      "norm_label": "[`clojure`](./clojure/)"
+    },
+    {
+      "label": "[`csharp`](./csharp/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "readme_csharp_csharp",
+      "community": 0,
+      "norm_label": "[`csharp`](./csharp/)"
+    },
+    {
+      "label": "[`cue`](./cue/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "readme_cue_cue",
+      "community": 0,
+      "norm_label": "[`cue`](./cue/)"
+    },
+    {
+      "label": "[`dhall`](./dhall)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "readme_dhall_dhall",
+      "community": 0,
+      "norm_label": "[`dhall`](./dhall)"
+    },
+    {
+      "label": "[`elixir`](./elixir/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "readme_elixir_elixir",
+      "community": 0,
+      "norm_label": "[`elixir`](./elixir/)"
+    },
+    {
+      "label": "[`elm`](./elm/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "readme_elm_elm",
+      "community": 0,
+      "norm_label": "[`elm`](./elm/)"
+    },
+    {
+      "label": "[`gleam`](./gleam/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "readme_gleam_gleam",
+      "community": 0,
+      "norm_label": "[`gleam`](./gleam/)"
+    },
+    {
+      "label": "[`go`](./go/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L112",
+      "_origin": "ast",
+      "id": "readme_go_go",
+      "community": 0,
+      "norm_label": "[`go`](./go/)"
+    },
+    {
+      "label": "[`hashi`](./hashi/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "_origin": "ast",
+      "id": "readme_hashi_hashi",
+      "community": 0,
+      "norm_label": "[`hashi`](./hashi/)"
+    },
+    {
+      "label": "[`haskell`](./haskell/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "readme_haskell_haskell",
+      "community": 0,
+      "norm_label": "[`haskell`](./haskell/)"
+    },
+    {
+      "label": "[`java`](./java)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "readme_java_java",
+      "community": 0,
+      "norm_label": "[`java`](./java)"
+    },
+    {
+      "label": "[`kotlin`](./kotlin/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "readme_kotlin_kotlin",
+      "community": 0,
+      "norm_label": "[`kotlin`](./kotlin/)"
+    },
+    {
+      "label": "[`latex`](./latex/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L148",
+      "_origin": "ast",
+      "id": "readme_latex_latex",
+      "community": 0,
+      "norm_label": "[`latex`](./latex/)"
+    },
+    {
+      "label": "[`nickel`](./nickel/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L154",
+      "_origin": "ast",
+      "id": "readme_nickel_nickel",
+      "community": 0,
+      "norm_label": "[`nickel`](./nickel/)"
+    },
+    {
+      "label": "[`nim`](./nim)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L158",
+      "_origin": "ast",
+      "id": "readme_nim_nim",
+      "community": 0,
+      "norm_label": "[`nim`](./nim)"
+    },
+    {
+      "label": "[`nix`](./nix/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L163",
+      "_origin": "ast",
+      "id": "readme_nix_nix",
+      "community": 0,
+      "norm_label": "[`nix`](./nix/)"
+    },
+    {
+      "label": "[`node`](./node/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "_origin": "ast",
+      "id": "readme_node_node",
+      "community": 0,
+      "norm_label": "[`node`](./node/)"
+    },
+    {
+      "label": "[`ocaml`](./ocaml/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "readme_ocaml_ocaml",
+      "community": 0,
+      "norm_label": "[`ocaml`](./ocaml/)"
+    },
+    {
+      "label": "[`opa`](./opa/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L188",
+      "_origin": "ast",
+      "id": "readme_opa_opa",
+      "community": 0,
+      "norm_label": "[`opa`](./opa/)"
+    },
+    {
+      "label": "[`php`](./php/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L193",
+      "_origin": "ast",
+      "id": "readme_php_php",
+      "community": 0,
+      "norm_label": "[`php`](./php/)"
+    },
+    {
+      "label": "[`protobuf`](./protobuf/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "readme_protobuf_protobuf",
+      "community": 0,
+      "norm_label": "[`protobuf`](./protobuf/)"
+    },
+    {
+      "label": "[`purescript`](./purescript/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L203",
+      "_origin": "ast",
+      "id": "readme_purescript_purescript",
+      "community": 0,
+      "norm_label": "[`purescript`](./purescript/)"
+    },
+    {
+      "label": "[`python`](./python/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L210",
+      "_origin": "ast",
+      "id": "readme_python_python",
+      "community": 0,
+      "norm_label": "[`python`](./python/)"
+    },
+    {
+      "label": "[`ruby`](./ruby/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "readme_ruby_ruby",
+      "community": 0,
+      "norm_label": "[`ruby`](./ruby/)"
+    },
+    {
+      "label": "[`rust`](./rust/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L221",
+      "_origin": "ast",
+      "id": "readme_rust_rust",
+      "community": 0,
+      "norm_label": "[`rust`](./rust/)"
+    },
+    {
+      "label": "[`scala`](./scala/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L234",
+      "_origin": "ast",
+      "id": "readme_scala_scala",
+      "community": 0,
+      "norm_label": "[`scala`](./scala/)"
+    },
+    {
+      "label": "[`shell`](./shell/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L239",
+      "_origin": "ast",
+      "id": "readme_shell_shell",
+      "community": 0,
+      "norm_label": "[`shell`](./shell/)"
+    },
+    {
+      "label": "[`zig`](./zig/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L243",
+      "_origin": "ast",
+      "id": "readme_zig_zig",
+      "community": 0,
+      "norm_label": "[`zig`](./zig/)"
+    },
+    {
+      "label": "Code organization",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L247",
+      "_origin": "ast",
+      "id": "readme_code_organization",
+      "community": 1,
+      "norm_label": "code organization"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_nix_flake_templates_for_easy_dev_environments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "readme_nix_flake_templates_for_easy_dev_environments",
+      "target": "readme_available_templates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L247",
+      "weight": 1.0,
+      "source": "readme_nix_flake_templates_for_easy_dev_environments",
+      "target": "readme_code_organization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "readme_nix_flake_templates_for_easy_dev_environments",
+      "target": "readme_how_to_use_the_templates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "readme_nix_flake_templates_for_easy_dev_environments",
+      "target": "readme_template_contents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_clojure_clojure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_csharp_csharp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_cue_cue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_dhall_dhall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_elixir_elixir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_elm_elm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_gleam_gleam",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_go_go",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_hashi_hashi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_haskell_haskell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_java_java",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_kotlin_kotlin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L148",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_latex_latex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_nickel_nickel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_nim_nim",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_nix_nix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_node_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_ocaml_ocaml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_opa_opa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_php_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_protobuf_protobuf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_purescript_purescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_python_python",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_ruby_ruby",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L221",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_rust_rust",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_scala_scala",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L239",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_shell_shell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "readme_template_contents",
+      "target": "readme_zig_zig",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "ee009bf94df8137745bf89089a057d335b4ec0b3"
+}
