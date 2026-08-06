@@ -28,6 +28,21 @@ yarn.lock
 .env
 .env.*
 
+# --- Config/tooling e dados que não são código (geram zero nós; só ruído) ---
+# A partir do graphify 0.9.34 esses JSON aparecem como "produced zero nodes".
+# São config de ferramenta, catálogos de asset e dados — não têm topologia de código.
+.claude/
+**/.claude-plugin/
+*.meta.json
+meta.json
+*.lock.json
+**/Contents.json
+*.example.json
+# tooling de plugin/harness (claude-code)
+evals.json
+hooks.json
+skills-lock.json
+
 # --- Dados privados e o próprio grafo ---
 archive/
 graphify-out/
@@ -37,3 +52,7 @@ graphify-out/
 result
 result-*
 .direnv/
+# config de editor/nvim (zero nós)
+.neoconf.json
+lazy-lock.json
+lazyvim.json
