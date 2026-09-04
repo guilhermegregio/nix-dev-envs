@@ -33,6 +33,7 @@
           python.pkgs.virtualenv
           python.pkgs.setuptools
           python.pkgs.wheel
+          uv
 
           # Ferramentas úteis
           curl
@@ -68,6 +69,12 @@
               break
             fi
           done
+
+          # Bundle combinado (público + CA corporativa) usado pelo nix-darwin,
+          # necessário pro uv (reqwest/rustls) confiar no proxy TLS do Netskope
+          if [ -f /etc/ssl/certs/combined-ca.pem ]; then
+            export SSL_CERT_FILE=/etc/ssl/certs/combined-ca.pem
+          fi
 
           # Garantir que temos pip atualizado
           export PATH="$HOME/.local/bin:$PATH"
