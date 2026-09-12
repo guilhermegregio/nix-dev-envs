@@ -69,7 +69,9 @@
           ]);
 
         # Self-contained venv exposing `graphify` and `graphify-mcp`.
-        graphify = pythonSet.mkVirtualEnv "graphify-env" workspace.deps.default;
+        # `mcp` é extra opcional do graphify (graphifyy[mcp]) e é o que `graphify serve` /
+        # `kb graph serve` precisam para expor o grafo via MCP stdio ao Claude Code.
+        graphify = pythonSet.mkVirtualEnv "graphify-env" (workspace.deps.default // { graphifyy = [ "mcp" ]; });
       in
       {
         packages.default = graphify;
