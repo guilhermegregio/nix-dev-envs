@@ -75,6 +75,9 @@
           export UV_PYTHON=${pkgs.python312}/bin/python3
           export UV_PYTHON_DOWNLOADS=never
 
+          export PNPM_HOME="$HOME/.pnpm"
+          export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"
+
           export PATH="$PWD/node_modules/.bin/:$PATH"
 
           echo "node `${pkgs.nodejs}/bin/node --version`"

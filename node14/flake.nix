@@ -35,6 +35,8 @@
 
         shellHook = ''
           echo "node `${pkgs.nodejs}/bin/node --version`"
+          export PNPM_HOME="$HOME/.pnpm"
+          export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"
           export PATH="$PWD/node_modules/.bin/:$PATH"
         '';
       };
