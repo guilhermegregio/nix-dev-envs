@@ -130,6 +130,12 @@
           description = "Node.js development environment 22.x.x";
         };
 
+        node-video = {
+          path = ./node-video;
+          description =
+            "Node.js 24 video environment (ffmpeg-full, playwright headless_shell, uv, fonts, HyperFrames envs)";
+        };
+
         flyio = {
           path = ./flyio;
           description = "Fly.io development environment";

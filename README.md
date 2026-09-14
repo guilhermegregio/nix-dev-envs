@@ -47,6 +47,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Nim]                    | [`nim`](./nim/)               |
 | [Nix]                    | [`nix`](./nix/)               |
 | [Node.js][node]          | [`node`](./node/)             |
+| [Node.js][node] (video)  | [`node-video`](./node-video/) |
 | [OCaml]                  | [`ocaml`](./ocaml/)           |
 | [Open Policy Agent][opa] | [`opa`](./opa)                |
 | [PHP]                    | [`php`](./php/)               |
