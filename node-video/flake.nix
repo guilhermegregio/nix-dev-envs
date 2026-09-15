@@ -22,6 +22,15 @@
       ];
       pkgs = import nixpkgs { inherit overlays system; };
 
+      # Wheels binárias do PyPI (numpy, scipy, librosa, numba, soxr, soundfile…) são
+      # compiladas para FHS: procuram libstdc++.so.6 e libz.so.1 por dlopen, e no NixOS
+      # não encontram nada fora do rpath. Sem isto, `import numpy` já quebra.
+      # Para estender: acrescente o pacote à lista (ex.: pkgs.libGL para opencv-python).
+      pythonWheelLibs = pkgs.lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc.lib   # libstdc++.so.6, libgcc_s.so.1, libgomp.so.1
+        pkgs.zlib               # libz.so.1
+      ];
+
       fontsConf = pkgs.makeFontsConf {
         fontDirectories = with pkgs; [
           inter
@@ -75,6 +84,9 @@
           export UV_PYTHON=${pkgs.python312}/bin/python3
           export UV_PYTHON_DOWNLOADS=never
 
+          # libs das wheels binárias do PyPI (ver pythonWheelLibs acima)
+          export LD_LIBRARY_PATH="${pythonWheelLibs}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
           export PNPM_HOME="$HOME/.pnpm"
           export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"
 
@@ -83,6 +95,7 @@
           echo "node `${pkgs.nodejs}/bin/node --version`"
           echo "`${pkgs.ffmpeg-full}/bin/ffmpeg -hide_banner -version | head -n1`"
           echo "`${pkgs.uv}/bin/uv --version`"
+          echo "python wheels: libstdc++/libz no LD_LIBRARY_PATH"
           if [ -n "''${HYPERFRAMES_BROWSER_PATH:-}" ]; then
             echo "headless_shell: $HYPERFRAMES_BROWSER_PATH"
           else
