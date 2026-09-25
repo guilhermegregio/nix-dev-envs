@@ -136,6 +136,12 @@
             "Node.js 24 video environment (ffmpeg-full, playwright headless_shell, uv, fonts, HyperFrames envs)";
         };
 
+        node-video-mac = {
+          path = ./node-video-mac;
+          description =
+            "Node.js 24 video environment for macOS (ffmpeg-full, whisper.cpp, uv, fonts; Chrome managed by HyperFrames)";
+        };
+
         flyio = {
           path = ./flyio;
           description = "Fly.io development environment";
